@@ -7,7 +7,8 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "deploy": "mkdir -p pub && cp index.html pub && cp -r dist pub && surge pub frets.colindrake.space && rm -rf pub"
   },
   "dependencies": {
     "lodash": "^4.17.4",
