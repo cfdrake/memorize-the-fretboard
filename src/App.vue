@@ -44,7 +44,7 @@ export default {
   name: 'app',
   data () {
     return {
-      // E, A, D, G, B, A (backwards)
+      // E, A, D, G, B, E (backwards)
       strings: [4, 11, 7, 2, 9, 4]
     }
   },
