@@ -35,6 +35,8 @@ export default new Vuex.Store({
       } else {
         state.incorrectQuestions.push(state.question)
       }
+
+      state.question = randomNote()
     },
     restart (state) {
       state.question = randomNote()

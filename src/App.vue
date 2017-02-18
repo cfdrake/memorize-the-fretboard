@@ -74,7 +74,6 @@ export default {
     },
     guess (note) {
       this.answerQuestion(note)
-      this.nextQuestion()
     },
     restartGame () {
       this.restart()
