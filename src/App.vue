@@ -7,6 +7,14 @@ div#app
     p A randomly selected note will show at the top, and you must click the corresponding fret on the fretboard. Any string may be chosen.
     p
       i Note: I'd like to eventually add more modes to this game!
+    form.options
+      h3 Options
+      fieldset
+        input(type='radio', value='sharps', v-model='displayNotes')
+        span Use Sharps
+        input(type='radio', value='flats', v-model='displayNotes')
+        span Use Flats
+
     button.start-button(@click='start') Start!
 
   //- Game
@@ -34,7 +42,7 @@ div#app
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
-import { noteNames, noteName } from './helpers'
+import { noteName } from './helpers'
 
 const truncateQuestions = (results) => {
   return results.reverse().slice(0, 10)
@@ -45,7 +53,8 @@ export default {
   data () {
     return {
       // E, A, D, G, B, E (backwards)
-      strings: [4, 11, 7, 2, 9, 4]
+      strings: [4, 11, 7, 2, 9, 4],
+      displayNotes: 'sharps'
     }
   },
   computed: {
@@ -68,7 +77,9 @@ export default {
     }
   },
   methods: {
-    noteName,
+    noteName (note) {
+      return noteName(note, this.displayNotes)
+    },
     start () {
       this.nextQuestion()
     },
@@ -94,6 +105,10 @@ export default {
 }
 
 .instructions {
+}
+
+.options {
+  margin-bottom: 1em;
 }
 
 .fretboard {
