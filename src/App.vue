@@ -22,7 +22,7 @@ div#app
 
     //- Scorecard
     p.score {{ percentCorrect }} ({{ numberCorrect }} / {{ numberQuestions }} Correct)
-      button(v-if='numberQuestions > 0').restart-button(@click='restartGame') Restart
+      button.restart-button(v-if='numberQuestions > 0', @click='restartGame') Restart
 
     //- Question history
     div.questions-container
