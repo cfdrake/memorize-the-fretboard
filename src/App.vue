@@ -151,11 +151,7 @@ export default {
   line-height: 30px;
   position: absolute;
   top: -4px;
-  left: 18px;
-}
-
-.fret-2-3:after {
-  left: 25px;
+  left: calc(50% - 4px);
 }
 
 .fret-4-1, .fret-11-1, .fret-7-1, .fret-2-1, .fret-9-1,
