@@ -8,7 +8,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 	state: {
 		question: null,
-    lastQuestionCorrect: false,
     correctQuestions: [],
     incorrectQuestions: []
 	},
@@ -33,10 +32,8 @@ export default new Vuex.Store({
     answerQuestion (state, payload) {
       if (notesEqual(state.question, payload)) {
         state.correctQuestions.push(state.question)
-        state.lastQuestionCorrect = true
       } else {
         state.incorrectQuestions.push(state.question)
-        state.lastQuestionCorrect = false
       }
     },
     restart (state) {
