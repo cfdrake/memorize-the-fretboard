@@ -142,15 +142,15 @@ export default {
 .fret-7-12:after,
 .fret-9-12:after {
   content: ' ';
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: black;
   line-height: 30px;
   position: absolute;
-  top: -4px;
-  left: calc(50% - 4px);
+  top: -5px;
+  left: calc(50% - 5px);
 }
 
 .fret-4-1, .fret-11-1, .fret-7-1, .fret-2-1, .fret-9-1,
