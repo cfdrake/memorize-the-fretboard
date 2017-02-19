@@ -66,6 +66,10 @@ export default {
     },
     restartGame () {
       this.restart()
+
+      if (!confirm('Use same settings as current game?')) {
+        this.$router.push('/')
+      }
     },
     fretClasses (string, fret) {
       // Return classes indicating string number, and string + fret number.
