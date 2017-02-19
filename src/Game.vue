@@ -1,6 +1,6 @@
 <template lang="pug">
 div.game
-  h2 {{ noteName(question) }}
+  h2.question {{ noteName(question) }}
   //- Fretboard
   div.fretboard
     div.string(v-for='string in strings')
@@ -79,6 +79,10 @@ export default {
 <style>
 .game {
   text-align: center;
+}
+
+.question {
+  height: 1.5em;
 }
 
 .string {
