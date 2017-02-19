@@ -5,7 +5,7 @@ div.game
   div.fretboard
     div.string(v-for='string in strings')
       div.fret(v-for='fret in 12',
-               @click='guess(string + fret)',
+               @click='guess($event.target, string + fret)',
                :class='fretClasses(string, fret)')
   //- Scorecard
   p.scorecard {{ percentCorrect }} ({{ numberCorrect }} / {{ numberQuestions }} Correct)
@@ -20,7 +20,7 @@ div.game
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
-import { noteName } from './helpers'
+import { notesEqual, noteName } from './helpers'
 
 const truncateRecent = (results) => {
   return results.reverse().slice(0, 10)
@@ -61,8 +61,15 @@ export default {
     start () {
       this.nextQuestion()
     },
-    guess (note) {
+    guess (target, note) {
+      const klass = (notesEqual(note, this.question) ? 'correct' : 'incorrect')
+
       this.answerQuestion(note)
+
+      target.classList.add(klass)
+      setInterval(() => {
+        target.classList.remove(klass)
+      }, 1000)
     },
     restartGame () {
       this.restart()
@@ -119,6 +126,10 @@ export default {
 .fret:hover {
   background-color: #eee;
 }
+
+.fret.correct { background-color: rgba(0, 255, 0, 0.25); }
+
+.fret.incorrect { background-color: rgba(255, 0, 0, 0.25); }
 
 .fret:first-child {
   border-left-width: 4px;
