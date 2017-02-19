@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "deploy": "mkdir -p pub && cp index.html pub && cp -r dist pub && surge pub frets.colindrake.space && rm -rf pub"
+    "deploy": "mkdir -p pub && cp index.html pub/200.html && cp -r dist pub && surge pub frets.colindrake.space && rm -rf pub"
   },
   "dependencies": {
     "vue": "^2.1.0",
