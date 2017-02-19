@@ -1,6 +1,6 @@
-# memorize-the-fretboard
+# Memorize the Fretboard
 
-> A Vue.js project
+> A VueJS powered game to help guitar fretboard memorization.
 
 ## Build Setup
 
@@ -13,6 +13,7 @@ npm run dev
 
 # build for production with minification
 npm run build
-```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# deploy to production
+npm run deploy
+```
